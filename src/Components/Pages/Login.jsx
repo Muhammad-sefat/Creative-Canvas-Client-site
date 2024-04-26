@@ -5,7 +5,8 @@ import { AuthContext } from "../AuthProvider";
 import { NavLink } from "react-router-dom";
 
 const Login = () => {
-  const { signinUser, signInWithGoogle } = useContext(AuthContext);
+  const { signinUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -30,7 +31,7 @@ const Login = () => {
   };
 
   const GithubSignInBtn = () => {
-    githubSignIn()
+    signInWithGithub()
       .then(() => {
         toast("Login Successfully");
       })
