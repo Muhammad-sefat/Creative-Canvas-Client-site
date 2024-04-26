@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
-  const { signinUser } = useContext(AuthContext);
+  const { signinUser, signInWithGoogle } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -18,6 +19,22 @@ const Login = () => {
         toast("Login Successfully");
       })
       .catch(() => toast("Please Provide Valid Email & Password"));
+  };
+
+  const googleSignInBtn = () => {
+    signInWithGoogle()
+      .then(() => {
+        toast("Login Successfully");
+      })
+      .catch((error) => toast(error));
+  };
+
+  const GithubSignInBtn = () => {
+    githubSignIn()
+      .then(() => {
+        toast("Login Successfully");
+      })
+      .catch((error) => toast(error));
   };
 
   return (
@@ -65,6 +82,27 @@ const Login = () => {
               <button className="btn  bg-orange-500 text-white">Login</button>
             </div>
           </form>
+          <div className="text-center pb-2">
+            <button
+              onClick={googleSignInBtn}
+              className="btn btn-secondary md:w-[88%] mx-auto mb-2"
+            >
+              Sign in with Google
+            </button>
+            <button
+              onClick={GithubSignInBtn}
+              className="btn btn-accent md:w-[88%] mx-auto"
+            >
+              Sign in with Github
+            </button>
+          </div>
+          <p className="text-center py-3">
+            New Here ? Please{" "}
+            <NavLink to={"/register"}>
+              {" "}
+              <span className="text-blue-500 font-medium">Register</span>
+            </NavLink>
+          </p>
         </div>
       </div>
     </div>
