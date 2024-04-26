@@ -11,10 +11,12 @@ import Login from "./Components/Pages/Login.jsx";
 import Register from "./Components/Pages/Register.jsx";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./Components/AuthProvider.jsx";
+import NotFound from "./Components/NotFound.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
