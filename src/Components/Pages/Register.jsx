@@ -1,4 +1,34 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const [showBtn, setShowBtn] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const { email, password, name, image } = data;
+    const navigate = useNavigate();
+    console.log(name, image);
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
+      toast("Please Provide More Stronge Password");
+      return;
+    }
+    createUser(email, password)
+      .then(() => {
+        updateUser(name, image);
+        toast("Register Successfully");
+        reset();
+        navigate("/");
+      })
+      .catch((error) => toast(error));
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -12,7 +42,22 @@ const Register = () => {
             </p>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="name"
+                  className="input input-bordered"
+                  {...register("name", { required: true })}
+                />
+                {errors.name && (
+                  <span className="text-red-500">This field is required</span>
+                )}
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -21,27 +66,47 @@ const Register = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
-                  required
+                  {...register("email", { required: true })}
+                />
+                {errors.email && (
+                  <span className="text-red-500">This field is required</span>
+                )}
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">PhotoURL</span>
+                </label>
+                <input
+                  id="image"
+                  type="text"
+                  placeholder="photoURL"
+                  className="input input-bordered"
                 />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+                <div className="relative">
+                  <input
+                    type={showBtn ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered w-full"
+                    {...register("password", { required: true })}
+                  />
+                  <span
+                    className="absolute bottom-3 right-3 text-xl"
+                    onClick={() => setShowBtn(!showBtn)}
+                  >
+                    {showBtn ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                  </span>
+                </div>
+                {errors.password && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-orange-500 text-white">
+                <button className="btn  bg-orange-500 text-white">
                   Register
                 </button>
               </div>

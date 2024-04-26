@@ -9,6 +9,8 @@ import AddCraftItems from "./Components/Pages/AddCraftItems.jsx";
 import MyArtCraftList from "./Components/Pages/MyArtCraftList.jsx";
 import Login from "./Components/Pages/Login.jsx";
 import Register from "./Components/Pages/Register.jsx";
+import { Toaster } from "react-hot-toast";
+import AuthProvider from "./Components/AuthProvider.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +46,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <Toaster />
+    </AuthProvider>
   </React.StrictMode>
 );
