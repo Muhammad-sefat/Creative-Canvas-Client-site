@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -110,6 +111,13 @@ const Register = () => {
                 </button>
               </div>
             </form>
+            <p className="text-center py-3">
+              Already Have An Account ? Please{" "}
+              <NavLink to={"/login"}>
+                {" "}
+                <span className="text-blue-500 font-medium">Login</span>
+              </NavLink>
+            </p>
           </div>
         </div>
       </div>
