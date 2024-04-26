@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
+
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const [showBtn, setShowBtn] = useState(false);
   const {
     register,
@@ -13,19 +15,16 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password, name, image } = data;
-    const navigate = useNavigate();
-    console.log(name, image);
+    const { email, password } = data;
     if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
       toast("Please Provide More Stronge Password");
       return;
     }
     createUser(email, password)
-      .then(() => {
-        updateUser(name, image);
+      .then((result) => {
+        console.log(result.user);
         toast("Register Successfully");
         reset();
-        navigate("/");
       })
       .catch((error) => toast(error));
   };
