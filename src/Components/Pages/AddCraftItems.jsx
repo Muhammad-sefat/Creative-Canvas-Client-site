@@ -28,6 +28,23 @@ const AddCraftItems = () => {
       photo,
     };
     console.log(Craft);
+
+    // send data
+
+    fetch("http://localhost:5000/crafts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(Craft),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
