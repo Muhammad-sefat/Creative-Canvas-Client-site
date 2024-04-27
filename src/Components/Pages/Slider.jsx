@@ -22,7 +22,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="py-5">
             <img
-              className="w-full max-h-[95vh] object-center rounded-md"
+              className="w-full max-h-[100vh] object-center rounded-md"
               src={slide1}
             />
           </div>
@@ -30,7 +30,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="py-5">
             <img
-              className="w-full max-h-[95vh] object-centerrounded-md"
+              className="w-full max-h-[100vh] object-centerrounded-md"
               src={slide2}
             />
           </div>
@@ -38,7 +38,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="py-5">
             <img
-              className="w-full max-h-[95vh] object-center rounded-md"
+              className="w-full max-h-[100vh] object-center rounded-md"
               src={slide3}
             />
           </div>
@@ -46,7 +46,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="py-5">
             <img
-              className="w-full max-h-[95vh] object-center rounded-md"
+              className="w-full max-h-[100vh] object-center rounded-md"
               src={slide4}
             />
           </div>
@@ -54,7 +54,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="py-5">
             <img
-              className="w-full max-h-[95vh] object-center  rounded-md"
+              className="w-full max-h-[100vh] object-center  rounded-md"
               src={slide5}
             />
           </div>
@@ -62,7 +62,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="py-5">
             <img
-              className="w-full max-h-[95vh] object-center rounded-md"
+              className="w-full max-h-[100vh] object-center rounded-md"
               src={slide6}
             />
           </div>
