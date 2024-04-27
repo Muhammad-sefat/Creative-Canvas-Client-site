@@ -1,61 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Components/Pages/Home.jsx";
-import AllCartCraftItems from "./Components/Pages/AllCartCraftItems.jsx";
-import AddCraftItems from "./Components/Pages/AddCraftItems.jsx";
-import MyArtCraftList from "./Components/Pages/MyArtCraftList.jsx";
-import Login from "./Components/Pages/Login.jsx";
-import Register from "./Components/Pages/Register.jsx";
+import { RouterProvider } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./Components/AuthProvider.jsx";
-import NotFound from "./Components/NotFound.jsx";
-import PrivateRoute from "./Components/Pages/PrivateRoute.jsx";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App></App>,
-    errorElement: <NotFound></NotFound>,
-    children: [
-      {
-        path: "/",
-        element: <Home></Home>,
-      },
-      {
-        path: "/allArt&Carft",
-        element: <AllCartCraftItems></AllCartCraftItems>,
-        loader: () => fetch("http://localhost:5000/crafts"),
-      },
-      {
-        path: "/AddCraftItem",
-        element: (
-          <PrivateRoute>
-            <AddCraftItems></AddCraftItems>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/myCraftList",
-        element: <MyArtCraftList></MyArtCraftList>,
-      },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
-    ],
-  },
-]);
+import Router from "./Components/Router.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={Router} />
       <Toaster />
     </AuthProvider>
   </React.StrictMode>

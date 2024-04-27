@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
 const AddCraftItems = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const handleCoffeeForm = (e) => {
     const form = e.target;
     const name = form.name.value;

@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
   const logOutBtn = () => {
     logOut().then(() => {
       toast("LogOut Successfully");

@@ -1,9 +1,7 @@
-import { useLoaderData } from "react-router-dom";
-import CraftTable from "./CraftTable";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllCartCraftItems = () => {
   const craftItem = useLoaderData();
-  console.log(craftItem);
   return (
     <div>
       <div className="text-2xl bg-orange-500 text-center p-5 my-5 font-semibold text-white">
@@ -30,7 +28,9 @@ const AllCartCraftItems = () => {
                 <td>{crafts.subcategory}</td>
                 <td>{crafts.price}</td>
                 <td>
-                  <button className="btn">View Details</button>
+                  <Link to={`/viewdetails/${crafts._id}`}>
+                    <button className="btn">View Details</button>
+                  </Link>
                 </td>
               </tr>
             ))}
