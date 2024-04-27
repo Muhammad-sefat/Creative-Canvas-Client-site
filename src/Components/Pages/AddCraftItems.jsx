@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider";
 const AddCraftItems = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const handleCoffeeForm = (e) => {
-    e.preventDefault();
-
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -41,6 +44,15 @@ const AddCraftItems = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Add Craft Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+          form.reset();
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -71,7 +83,8 @@ const AddCraftItems = () => {
               className="border border-gray-500 p-1 rounded-md w-full mb-2"
               type="text"
               name="name"
-              placeholder="Enter user name"
+              defaultValue={user?.displayName}
+              readOnly
             />
             <label className="font-semibold ">Craft Name</label>
             <br />
@@ -115,7 +128,8 @@ const AddCraftItems = () => {
               className="border border-gray-500 p-1 rounded-md w-full mb-2"
               type="text"
               name="email"
-              placeholder="Enter user email"
+              defaultValue={user?.email}
+              readOnly
             />
             <label className="font-semibold">Subcategory Name</label>
             <br />

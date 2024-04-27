@@ -147,7 +147,7 @@ const Navbar = () => {
               </a>
             </div>
           ) : (
-            <div>
+            <div className="space-x-2">
               <Link to={"/login"}>
                 <button className="btn text-base">Login</button>
               </Link>
