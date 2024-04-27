@@ -37,9 +37,6 @@ const AllCartCraftItems = () => {
           </tbody>
         </table>
       </div>
-      {/* {craftItem.map((craft) => (
-        <CraftTable key={craft._id} crafts={craft}></CraftTable>
-      ))} */}
     </div>
   );
 };

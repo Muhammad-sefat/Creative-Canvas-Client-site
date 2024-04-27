@@ -9,6 +9,7 @@ import MyArtCraftList from "./Pages/MyArtCraftList";
 import PrivateRoute from "./Pages/PrivateRoute";
 import Register from "./Pages/Register";
 import ViewDetails from "./Pages/ViewDetails";
+import CraftItems from "./Pages/CraftItems";
 
 const Router = createBrowserRouter([
   {
@@ -46,6 +47,11 @@ const Router = createBrowserRouter([
       {
         path: "/myCraftList",
         element: <MyArtCraftList></MyArtCraftList>,
+      },
+      {
+        path: "/",
+        element: <CraftItems></CraftItems>,
+        loader: () => fetch("http://localhost:5000/craftss"),
       },
       {
         path: "/login",
