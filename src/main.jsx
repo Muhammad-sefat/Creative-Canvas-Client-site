@@ -12,6 +12,7 @@ import Register from "./Components/Pages/Register.jsx";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./Components/AuthProvider.jsx";
 import NotFound from "./Components/NotFound.jsx";
+import PrivateRoute from "./Components/Pages/PrivateRoute.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/AddCraftItem",
-        element: <AddCraftItems></AddCraftItems>,
+        element: (
+          <PrivateRoute>
+            <AddCraftItems></AddCraftItems>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myCraftList",

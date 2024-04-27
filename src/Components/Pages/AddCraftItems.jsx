@@ -83,7 +83,7 @@ const AddCraftItems = () => {
               className="border border-gray-500 p-1 rounded-md w-full mb-2"
               type="text"
               name="name"
-              defaultValue={user?.displayName}
+              defaultValue={user?.displayName || "Muhammad Sefat"}
               readOnly
             />
             <label className="font-semibold ">Craft Name</label>

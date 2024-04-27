@@ -2,11 +2,15 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { signinUser, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
+  console.log(from);
   const {
     register,
     handleSubmit,
@@ -16,24 +20,33 @@ const Login = () => {
   const onSubmit = (data) => {
     const { email, password } = data;
     signinUser(email, password)
-      .then(() => {
+      .then((result) => {
         toast("Login Successfully");
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch(() => toast("Please Provide Valid Email & Password"));
   };
 
   const googleSignInBtn = () => {
     signInWithGoogle()
-      .then(() => {
+      .then((result) => {
         toast("Login Successfully");
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch((error) => toast(error));
   };
 
   const GithubSignInBtn = () => {
     signInWithGithub()
-      .then(() => {
+      .then((result) => {
         toast("Login Successfully");
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch((error) => toast(error));
   };
