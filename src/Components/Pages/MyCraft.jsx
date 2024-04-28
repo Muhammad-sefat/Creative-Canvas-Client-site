@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const MyCraft = ({ crafts }) => {
-  const { craft, photo, price, rating, customization, stock } = crafts;
-  console.log(crafts);
+  const { craft, photo, price, rating, customization, stock, _id } = crafts;
+
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
@@ -23,7 +25,10 @@ const MyCraft = ({ crafts }) => {
             <p className="font-medium">Stock Status : {stock}</p>
           </div>
           <div className="flex justify-between items-center ">
-            <button className="btn bg-orange-500 text-white">Update</button>
+            <Link to={`/updateCraft/${_id}`}>
+              {" "}
+              <button className="btn bg-orange-500 text-white">Update</button>
+            </Link>
             <button className="btn bg-orange-500 text-white">Delete</button>
           </div>
         </div>

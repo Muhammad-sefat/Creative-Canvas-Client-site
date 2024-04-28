@@ -10,6 +10,7 @@ import PrivateRoute from "./Pages/PrivateRoute";
 import Register from "./Pages/Register";
 import ViewDetails from "./Pages/ViewDetails";
 import CraftItems from "./Pages/CraftItems";
+import UpdateCraft from "./Pages/UpdateCraft";
 
 const Router = createBrowserRouter([
   {
@@ -51,6 +52,12 @@ const Router = createBrowserRouter([
             <MyArtCraftList></MyArtCraftList>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/updateCraft/:id",
+        element: <UpdateCraft></UpdateCraft>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/crafts/${params.id}`),
       },
       {
         path: "/",
