@@ -11,6 +11,7 @@ import Register from "./Pages/Register";
 import ViewDetails from "./Pages/ViewDetails";
 import CraftItems from "./Pages/CraftItems";
 import UpdateCraft from "./Pages/UpdateCraft";
+import ViewCraft from "./Pages/ViewCraft";
 
 const Router = createBrowserRouter([
   {
@@ -63,6 +64,12 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <CraftItems></CraftItems>,
+      },
+      {
+        path: "/viewCraft/:id",
+        element: <ViewCraft></ViewCraft>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/crafts/${params.id}`),
       },
       {
         path: "/login",

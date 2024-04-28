@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const SingleCraftItem = ({ crafts }) => {
-  const { craft, photo, subcategory, description, price, rating } = crafts;
+  const { craft, photo, subcategory, description, price, rating, _id } = crafts;
   return (
     <div>
       <div className="card  bg-base-100 shadow-xl my-5">
@@ -19,9 +21,11 @@ const SingleCraftItem = ({ crafts }) => {
             </p>
           </div>
           <div className="text-left">
-            <button className="btn bg-orange-500 text-white">
-              View Details
-            </button>
+            <Link to={`/viewCraft/${_id}`}>
+              <button className="btn bg-orange-500 text-white">
+                View Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>
