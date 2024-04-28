@@ -21,6 +21,7 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/crafts"),
       },
       {
         path: "/allArt&Carft",

@@ -15,7 +15,9 @@ const MyArtCraftList = () => {
   }, [user]);
   return (
     <div>
-      <h2 className="text-3xl font-bold py-3">My Arts and Crafts</h2>
+      <h2 className="text-3xl font-bold py-3 bg-orange-500 p-3 text-white rounded-md">
+        My Arts and Crafts
+      </h2>
       <div className="grid md:grid-cols-3 gap-5">
         {crafts.map((craft) => (
           <MyCraft
