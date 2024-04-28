@@ -3,11 +3,12 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showBtn, setShowBtn] = useState(false);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -26,6 +27,7 @@ const Register = () => {
         console.log(result.user);
         toast("Register Successfully");
         reset();
+        navigate("/");
       })
       .catch((error) => toast(error));
   };
@@ -106,7 +108,7 @@ const Register = () => {
                 )}
               </div>
               <div className="form-control mt-6">
-                <button className="btn  bg-orange-500 text-white">
+                <button className="btn bg-orange-500 text-white">
                   Register
                 </button>
               </div>
@@ -114,7 +116,6 @@ const Register = () => {
             <p className="text-center py-3">
               Already Have An Account ? Please{" "}
               <NavLink to={"/login"}>
-                {" "}
                 <span className="text-blue-500 font-medium">Login</span>
               </NavLink>
             </p>

@@ -1,8 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
 const CraftItems = () => {
-  const craftItems = useLoaderData();
-  console.log(craftItems);
   return (
     <div>
       <h2 className="text-3xl font-bold pt-8">Arts & Crafts</h2>

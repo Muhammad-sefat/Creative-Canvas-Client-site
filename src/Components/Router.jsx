@@ -46,12 +46,15 @@ const Router = createBrowserRouter([
       },
       {
         path: "/myCraftList",
-        element: <MyArtCraftList></MyArtCraftList>,
+        element: (
+          <PrivateRoute>
+            <MyArtCraftList></MyArtCraftList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/",
         element: <CraftItems></CraftItems>,
-        loader: () => fetch("http://localhost:5000/craftss"),
       },
       {
         path: "/login",

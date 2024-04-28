@@ -29,7 +29,6 @@ const AddCraftItems = () => {
       process,
       photo,
     };
-    console.log(Craft);
 
     // send data
 
@@ -42,7 +41,7 @@ const AddCraftItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.insertedId);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
