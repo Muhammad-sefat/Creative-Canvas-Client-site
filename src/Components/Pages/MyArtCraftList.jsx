@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider";
+import MyCraft from "./MyCraft";
 
 const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +16,12 @@ const MyArtCraftList = () => {
   }, [user]);
   return (
     <div>
-      <h2>My Arts and Crafts</h2>
+      <h2 className="text-2xl font-bold py-3">My Arts and Crafts</h2>
+      <div className="grid md:grid-cols-3 gap-5">
+        {crafts.map((craft) => (
+          <MyCraft key={craft._id} crafts={craft}></MyCraft>
+        ))}
+      </div>
     </div>
   );
 };
