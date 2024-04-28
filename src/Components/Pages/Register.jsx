@@ -118,7 +118,17 @@ const Register = () => {
             </p>
           </div>
           <div className="text-center lg:text-left">
-            <img className="p-3 md:p-16" src={spider} alt="image" />
+            <p className="text-2xl md:text-4xl font-bold py-3">
+              Importants Of Craft
+            </p>
+            <p className="font-medium pb-4">
+              {" "}
+              Craft encourages critical thinking and problem-solving skills.
+              When analyzing or creating art, individuals must observe,
+              interpret, and make decisions, fostering analytical thinking and
+              cognitive development.
+            </p>
+            <img className="rounded-md" src={spider} alt="image" />
           </div>
         </div>
       </div>
