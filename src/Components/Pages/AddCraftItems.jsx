@@ -3,10 +3,8 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
 const AddCraftItems = () => {
   const { user } = useContext(AuthContext);
-  const handleCoffeeForm = (e) => {
+  const handleCraftForm = (e) => {
     const form = e.target;
-    const name = form.name.value;
-    const email = form.email.value;
     const craft = form.craft.value;
     const subcategory = form.subcategory.value;
     const stock = form.stock.value;
@@ -17,8 +15,6 @@ const AddCraftItems = () => {
     const process = form.process.value;
     const photo = form.photo.value;
     const Craft = {
-      name,
-      email,
       craft,
       subcategory,
       stock,
@@ -59,7 +55,7 @@ const AddCraftItems = () => {
   return (
     <div>
       <form
-        onSubmit={handleCoffeeForm}
+        onSubmit={handleCraftForm}
         className="border border-amber-900 rounded-md  md:w-[90%] mx-auto my-5 p-8 bg-orange-300"
       >
         <h1 className="text-center text-3xl font-semibold py-3">
@@ -78,16 +74,16 @@ const AddCraftItems = () => {
             <label className="font-semibold ">User Name</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="name"
-              defaultValue={user?.displayName || "Muhammad Sefat"}
+              defaultValue={user?.displayName}
               readOnly
             />
             <label className="font-semibold ">Craft Name</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="craft"
               placeholder="Enter craft name"
@@ -95,7 +91,7 @@ const AddCraftItems = () => {
             <label className="font-semibold">Stock Status</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="stock"
               placeholder="Stock status"
@@ -104,7 +100,7 @@ const AddCraftItems = () => {
             <label className="font-semibold ">Price</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="price"
               placeholder="Enter Price"
@@ -113,7 +109,7 @@ const AddCraftItems = () => {
             <label className="font-semibold ">Customization</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="customization"
               placeholder="customization"
@@ -123,7 +119,7 @@ const AddCraftItems = () => {
             <label className="font-semibold ">User Email</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="email"
               defaultValue={user?.email}
@@ -132,26 +128,27 @@ const AddCraftItems = () => {
             <label className="font-semibold">Subcategory Name</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="subcategory"
               placeholder="Enter subcategory name"
             />
 
             <br />
-            <label className="font-semibold ">Short Description</label>
+            <label className="font-semibold">Photo URL</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
-              name="description"
-              placeholder="Enter short description"
+              name="photo"
+              placeholder="Enter photo URL"
             />
+
             <br />
             <label className="font-semibold ">Rating</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="rating"
               placeholder="Enter rating"
@@ -160,7 +157,7 @@ const AddCraftItems = () => {
             <label className="font-semibold ">Processing Time</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="process"
               placeholder="Processing time"
@@ -168,13 +165,13 @@ const AddCraftItems = () => {
           </div>
         </div>
         <div className="text-left">
-          <label className="font-semibold">Photo URL</label>
+          <label className="font-semibold ">Short Description</label>
           <br />
-          <input
+          <textarea
             className="border border-gray-500 p-1 rounded-md w-full mb-2"
             type="text"
-            name="photo"
-            placeholder="Enter photo URL"
+            name="description"
+            placeholder="Enter short description"
           />
         </div>
         <input

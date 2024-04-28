@@ -5,6 +5,7 @@ import MyCraft from "./MyCraft";
 const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
   const [crafts, setCrafts] = useState([]);
+  console.log(user.email);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myCrafts/${user?.email}`)

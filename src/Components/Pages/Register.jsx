@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
 import { NavLink, useNavigate } from "react-router-dom";
+import spider from "../../assets/spider.jpg";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -35,17 +36,12 @@ const Register = () => {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Register now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-          </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
+                <p className="text-4xl font-bold text-orange-500 pb-3">
+                  Register Now!
+                </p>
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
@@ -116,9 +112,13 @@ const Register = () => {
             <p className="text-center py-3">
               Already Have An Account ? Please{" "}
               <NavLink to={"/login"}>
+                {" "}
                 <span className="text-blue-500 font-medium">Login</span>
               </NavLink>
             </p>
+          </div>
+          <div className="text-center lg:text-left">
+            <img className="p-3 md:p-16" src={spider} alt="image" />
           </div>
         </div>
       </div>

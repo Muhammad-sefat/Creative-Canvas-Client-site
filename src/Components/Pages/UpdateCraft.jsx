@@ -27,7 +27,7 @@ const UpdateCraft = () => {
       process,
       photo,
     };
-    console.log(updateCraft);
+
     fetch(`http://localhost:5000/crafts/${_id}`, {
       method: "PUT",
       headers: {
@@ -37,7 +37,6 @@ const UpdateCraft = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
@@ -59,12 +58,12 @@ const UpdateCraft = () => {
           Update Craft
         </h1>
 
-        <div className="flex flex-col md:flex-row  gap-8 text-left">
+        <div className="flex flex-col md:flex-row  md:gap-8 text-left">
           <div className="md:w-[50%]">
             <label className="font-semibold ">Craft Name</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="craft"
               placeholder="Enter craft name"
@@ -72,7 +71,7 @@ const UpdateCraft = () => {
             <label className="font-semibold">Stock Status</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="stock"
               placeholder="Stock status"
@@ -81,7 +80,7 @@ const UpdateCraft = () => {
             <label className="font-semibold ">Price</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="price"
               placeholder="Enter Price"
@@ -90,36 +89,36 @@ const UpdateCraft = () => {
             <label className="font-semibold ">Customization</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="customization"
               placeholder="customization"
             />
           </div>
           <div className="md:w-[50%]">
-            <label className="font-semibold">Subcategory Name</label>
+            <label className="font-semibold ">Subcategory Name</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="subcategory"
               placeholder="Enter subcategory name"
             />
 
             <br />
-            <label className="font-semibold ">Short Description</label>
+            <label className="font-semibold">Photo URL</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
-              name="description"
-              placeholder="Enter short description"
+              name="photo"
+              placeholder="Enter photo URL"
             />
             <br />
             <label className="font-semibold ">Rating</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="rating"
               placeholder="Enter rating"
@@ -128,7 +127,7 @@ const UpdateCraft = () => {
             <label className="font-semibold ">Processing Time</label>
             <br />
             <input
-              className="border border-gray-500 p-1 rounded-md w-full mb-2"
+              className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="process"
               placeholder="Processing time"
@@ -136,13 +135,13 @@ const UpdateCraft = () => {
           </div>
         </div>
         <div className="text-left">
-          <label className="font-semibold">Photo URL</label>
+          <label className="font-semibold ">Short Description</label>
           <br />
-          <input
-            className="border border-gray-500 p-1 rounded-md w-full mb-2"
+          <textarea
+            className="border border-gray-500 p-2 rounded-md w-full mb-2"
             type="text"
-            name="photo"
-            placeholder="Enter photo URL"
+            name="description"
+            placeholder="Enter short description"
           />
         </div>
         <input
