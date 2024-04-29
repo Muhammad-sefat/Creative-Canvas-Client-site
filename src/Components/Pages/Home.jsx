@@ -1,3 +1,4 @@
+import ArtCraftItems from "./ArtCraftItems";
 import Blogs from "./Blogs";
 import CraftItems from "./CraftItems";
 import Faq from "./Faq";
@@ -9,6 +10,7 @@ const Home = () => {
       <Slider></Slider>
       <CraftItems></CraftItems>
       <Blogs></Blogs>
+      <ArtCraftItems></ArtCraftItems>
       <Faq></Faq>
     </div>
   );
