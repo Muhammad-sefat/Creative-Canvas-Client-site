@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
+
 const AddCraftItems = () => {
   const { user } = useContext(AuthContext);
   const handleCraftForm = (e) => {
+    e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
     const craft = form.craft.value;
     const subcategory = form.subcategory.value;
     const stock = form.stock.value;
@@ -15,6 +19,8 @@ const AddCraftItems = () => {
     const process = form.process.value;
     const photo = form.photo.value;
     const Craft = {
+      name,
+      email,
       craft,
       subcategory,
       stock,
@@ -37,7 +43,7 @@ const AddCraftItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.insertedId);
+        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -77,7 +83,7 @@ const AddCraftItems = () => {
               className="border border-gray-500 p-2 rounded-md w-full mb-2"
               type="text"
               name="name"
-              defaultValue={user?.displayName}
+              defaultValue={user?.displayName || "Muhammad Sefat"}
               readOnly
             />
             <label className="font-semibold ">Craft Name</label>
