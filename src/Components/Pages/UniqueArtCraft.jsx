@@ -1,19 +1,35 @@
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import SingleCraftItem from "./SingleCraftItem";
 
 const UniqueArtCraft = () => {
   const uniqueCraft = useLoaderData();
-  console.log(uniqueCraft);
-  const {
-    photo,
-    name,
-    subcategory,
-    description,
-    price,
-    rating,
-    process,
-    stock,
-    customization,
-  } = uniqueCraft;
+  const { photo, name, subcategory, description, price, rating, process } =
+    uniqueCraft;
+
+  const [artCrafts, setArtCraft] = useState([]);
+  // const [uniqueValue, setUniqueValue] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/subcraft")
+      .then((res) => res.json())
+      .then((data) => {
+        setArtCraft(data);
+      });
+  }, []);
+
+  // useEffect(() => {
+  //   const uniqueValue = artCrafts.filter(
+  //     (artcraft) => uniqueCraft.subcategory === artcraft.subcategory
+  //   );
+  //   setUniqueValue(uniqueValue);
+  // }, []);
+  const uniqueValue = artCrafts.filter(
+    (artcraft) => uniqueCraft.subcategory === artcraft.subcategory
+  );
+
+  console.log(uniqueValue);
+
   return (
     <div>
       <section className="p-4 lg:p-8 dark:bg-gray-100 dark:text-gray-800">
@@ -51,6 +67,14 @@ const UniqueArtCraft = () => {
           </div>
         </div>
       </section>
+      <p className="text-2xl md:text-4xl font-bold py-5 text-center text-orange-500">
+        Releted Art and Craft
+      </p>
+      <div className="grid md:grid-cols-3 gap-5">
+        {uniqueValue.slice(0, 3).map((craft) => (
+          <SingleCraftItem key={craft._id} crafts={craft}></SingleCraftItem>
+        ))}
+      </div>
     </div>
   );
 };

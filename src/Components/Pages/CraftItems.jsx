@@ -3,7 +3,6 @@ import SingleCraftItem from "./SingleCraftItem";
 
 const CraftItems = () => {
   const allCrafts = useLoaderData();
-  console.log(allCrafts);
   return (
     <div>
       <h2 className="text-3xl font-bold pt-8 text-orange-500">Our Crafts</h2>

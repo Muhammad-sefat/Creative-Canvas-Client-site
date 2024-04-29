@@ -43,6 +43,7 @@ const MyArtCraftList = () => {
       const uniqueValue = crafts.filter((currentElm) => {
         return filterOnlyData.includes(currentElm.customization);
       });
+
       setCustomize(uniqueValue);
       setDisplayCustomize(uniqueValue);
     }
@@ -91,7 +92,7 @@ const MyArtCraftList = () => {
         {displayCustomize.map((craft) => (
           <MyCraft
             key={craft._id}
-            crafts={craft}
+            craftss={craft}
             displayCustomize={displayCustomize}
             setDisplayCustomize={setDisplayCustomize}
           ></MyCraft>
