@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyCraft = ({ craftss, crafts, setCrafts }) => {
+const MyCraft = ({ craftss, displayCustomize, setDisplayCustomize }) => {
   const { craft, photo, price, rating, customization, stock, _id } = craftss;
 
   const deleteCraft = (id) => {
@@ -27,8 +27,8 @@ const MyCraft = ({ craftss, crafts, setCrafts }) => {
                 text: "Your Coffee has been deleted.",
                 icon: "success",
               });
-              const remaning = crafts.filter((crf) => crf._id !== id);
-              setCrafts(remaning);
+              const remaning = displayCustomize.filter((crf) => crf._id !== id);
+              setDisplayCustomize(remaning);
             }
           });
       }

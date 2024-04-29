@@ -5,8 +5,8 @@ import MyCraft from "./MyCraft";
 const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
   const [crafts, setCrafts] = useState([]);
-  // const [customize, setCustomize] = useState([]);
-  // const [displayCustomize, setDisplayCustomize] = useState([]);
+  const [customize, setCustomize] = useState([]);
+  const [displayCustomize, setDisplayCustomize] = useState([]);
   console.log(crafts);
 
   useEffect(() => {
@@ -18,44 +18,44 @@ const MyArtCraftList = () => {
       });
   }, [user]);
 
-  // const handleFilter = (filter) => {
-  //   if (filter === "All") {
-  //     setDisplayCustomize(customize);
-  //   } else if (filter === "Yes") {
-  //     const remoteJobs = customize.filter((job) => job.customization === "Yes");
-  //     setDisplayCustomize(remoteJobs);
-  //   } else if (filter === "No") {
-  //     const onsiteJobs = customize.filter((job) => job.customization === "No");
-  //     setDisplayCustomize(onsiteJobs);
-  //   }
-  // };
+  const handleFilter = (filter) => {
+    if (filter === "All") {
+      setDisplayCustomize(customize);
+    } else if (filter === "Yes") {
+      const remoteJobs = customize.filter((job) => job.customization === "Yes");
+      setDisplayCustomize(remoteJobs);
+    } else if (filter === "No") {
+      const onsiteJobs = customize.filter((job) => job.customization === "No");
+      setDisplayCustomize(onsiteJobs);
+    }
+  };
 
-  // const UniqueData = (data, property) => {
-  //   let newValue = data.map((currElm) => {
-  //     return currElm[property];
-  //   });
-  //   return (newValue = ["All", ...new Set(newValue)]);
-  // };
+  const UniqueData = (data, property) => {
+    let newValue = data.map((currElm) => {
+      return currElm[property];
+    });
+    return (newValue = ["All", ...new Set(newValue)]);
+  };
 
-  // const filterOnlyData = UniqueData(crafts, "customization");
+  const filterOnlyData = UniqueData(crafts, "customization");
 
-  // useEffect(() => {
-  //   if (crafts.length > 0) {
-  //     const uniqueValue = crafts.filter((currentElm) => {
-  //       return filterOnlyData.includes(currentElm.customization);
-  //     });
-  //     // console.log(uniqueValue);
-  //     setCustomize(uniqueValue);
-  //     setDisplayCustomize(uniqueValue);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (crafts.length > 0) {
+      const uniqueValue = crafts.filter((currentElm) => {
+        return filterOnlyData.includes(currentElm.customization);
+      });
+      // console.log(uniqueValue);
+      setCustomize(uniqueValue);
+      setDisplayCustomize(uniqueValue);
+    }
+  }, []);
 
   return (
     <div>
       <h2 className="text-3xl font-bold py-3 bg-orange-500 p-3 text-white rounded-md">
         My Arts and Crafts
       </h2>
-      {/* <div className="dropdown dropdown-bottom flex items-center justify-center gap-5">
+      <div className="dropdown dropdown-bottom flex items-center justify-center gap-5">
         <p className=" text-3xl font-bold">Filter By : </p>
         <div
           tabIndex={0}
@@ -88,14 +88,14 @@ const MyArtCraftList = () => {
             <a>No</a>
           </li>
         </ul>
-      </div> */}
+      </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 py-5">
-        {crafts.map((craft) => (
+        {displayCustomize.map((craft) => (
           <MyCraft
             key={craft._id}
             craftss={craft}
-            crafts={crafts}
-            setCrafts={setCrafts}
+            displayCustomize={displayCustomize}
+            setDisplayCustomize={setDisplayCustomize}
           ></MyCraft>
         ))}
       </div>
