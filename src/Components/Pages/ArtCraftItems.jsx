@@ -12,10 +12,10 @@ const ArtCraftItems = () => {
       });
   }, []);
   return (
-    <div>
-      <h1 className="text-3xl font-bold pt-8 text-orange-500">Art & Craft</h1>
+    <div className="py-5">
+      <h1 className="text-4xl font-bold pt-8 text-orange-500">Art & Craft</h1>
       <div className="grid md:grid-cols-3 gap-5">
-        {artCrafts.map((artCraft) => (
+        {artCrafts.slice(0, 6).map((artCraft) => (
           <SingleArtCraftItems
             key={artCraft._id}
             artCraft={artCraft}

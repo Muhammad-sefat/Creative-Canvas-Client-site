@@ -7,7 +7,6 @@ const MyArtCraftList = () => {
   const [crafts, setCrafts] = useState([]);
   const [customize, setCustomize] = useState([]);
   const [displayCustomize, setDisplayCustomize] = useState([]);
-  console.log(crafts);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myCrafts/${user?.email}`)
@@ -22,11 +21,11 @@ const MyArtCraftList = () => {
     if (filter === "All") {
       setDisplayCustomize(customize);
     } else if (filter === "Yes") {
-      const remoteJobs = customize.filter((job) => job.customization === "Yes");
-      setDisplayCustomize(remoteJobs);
+      const custom = customize.filter((cus) => cus.customization === "Yes");
+      setDisplayCustomize(custom);
     } else if (filter === "No") {
-      const onsiteJobs = customize.filter((job) => job.customization === "No");
-      setDisplayCustomize(onsiteJobs);
+      const customz = customize.filter((cus) => cus.customization === "No");
+      setDisplayCustomize(customz);
     }
   };
 
@@ -44,7 +43,6 @@ const MyArtCraftList = () => {
       const uniqueValue = crafts.filter((currentElm) => {
         return filterOnlyData.includes(currentElm.customization);
       });
-      // console.log(uniqueValue);
       setCustomize(uniqueValue);
       setDisplayCustomize(uniqueValue);
     }
@@ -93,7 +91,7 @@ const MyArtCraftList = () => {
         {displayCustomize.map((craft) => (
           <MyCraft
             key={craft._id}
-            craftss={craft}
+            crafts={craft}
             displayCustomize={displayCustomize}
             setDisplayCustomize={setDisplayCustomize}
           ></MyCraft>

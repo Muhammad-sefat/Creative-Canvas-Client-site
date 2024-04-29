@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyCraft = ({ craftss, displayCustomize, setDisplayCustomize }) => {
-  const { craft, photo, price, rating, customization, stock, _id } = craftss;
+const MyCraft = ({ crafts, displayCustomize, setDisplayCustomize }) => {
+  const { craft, photo, price, rating, customization, stock, _id } = crafts;
 
   const deleteCraft = (id) => {
     Swal.fire({
@@ -39,7 +39,7 @@ const MyCraft = ({ craftss, displayCustomize, setDisplayCustomize }) => {
     <div>
       <div className="card bg-base-100 shadow-xl">
         <figure>
-          <img src={photo} alt="image" />
+          <img className="h-[90vh]" src={photo} alt="image" />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-xl">{craft}</h2>
