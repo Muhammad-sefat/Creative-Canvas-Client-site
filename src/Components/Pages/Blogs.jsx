@@ -2,6 +2,7 @@ import art01 from "../../assets/art01.jpg";
 import art02 from "../../assets/art02.jpg";
 import art03 from "../../assets/art03.jpg";
 import art04 from "../../assets/art04.jpg";
+import { Typewriter } from "react-simple-typewriter";
 const Blogs = () => {
   return (
     <div>
@@ -9,7 +10,15 @@ const Blogs = () => {
         <div className="container p-6 mx-auto space-y-8">
           <div className="space-y-2 text-center">
             <h2 className="text-3xl font-bold">
-              Exploring the Beauty and Creativity of Artisanal Creations
+              Exploring the Beauty and{" "}
+              <span className="text-orange-500">
+                <Typewriter
+                  words={["Creativity of Artisanal Creations"]}
+                  loop
+                  typeSpeed={80}
+                  deleteSpeed={100}
+                />
+              </span>
             </h2>
             <p className="font-serif text-base dark:text-gray-600">
               Engaging with art encourages creativity and fosters innovation.

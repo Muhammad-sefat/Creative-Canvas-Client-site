@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 import MyCraft from "./MyCraft";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
@@ -51,7 +52,12 @@ const MyArtCraftList = () => {
   return (
     <div>
       <h2 className="text-3xl font-bold py-3 bg-orange-500 p-3 text-white rounded-md">
-        My Arts and Crafts
+        <Typewriter
+          words={["My Arts and Crafts"]}
+          loop
+          typeSpeed={120}
+          deleteSpeed={80}
+        />
       </h2>
       <div className="dropdown dropdown-bottom flex items-center justify-center gap-5">
         <p className=" text-3xl font-bold">Filter By : </p>

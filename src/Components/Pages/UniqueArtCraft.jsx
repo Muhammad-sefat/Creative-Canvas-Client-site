@@ -1,6 +1,8 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleUniqueArtCraft from "./SingleUniqueArtCraft";
+import { Typewriter } from "react-simple-typewriter";
 
 const UniqueArtCraft = () => {
   const uniqueCraft = useLoaderData();
@@ -61,7 +63,15 @@ const UniqueArtCraft = () => {
         </div>
       </section>
       <p className="text-2xl md:text-4xl font-bold py-5 text-center text-orange-500">
-        Releted Art and Craft
+        Releted{" "}
+        <span className="text-lime-500">
+          <Typewriter
+            words={["Art And Craft"]}
+            loop
+            typeSpeed={70}
+            deleteSpeed={100}
+          ></Typewriter>
+        </span>
       </p>
       <div className="grid md:grid-cols-3 gap-5">
         {uniqueValue.slice(0, 3).map((craft) => (

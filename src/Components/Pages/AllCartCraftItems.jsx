@@ -1,11 +1,17 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const AllCartCraftItems = () => {
   const craftItem = useLoaderData();
   return (
     <div>
-      <div className="text-2xl bg-orange-500 text-center p-5 my-5 font-semibold text-white">
-        Our All Arts And Crafts Here
+      <div className="text-3xl bg-orange-500 text-center p-5 my-5 font-bold text-white">
+        <Typewriter
+          words={["Our All Arts And Crafts Here"]}
+          loop
+          typeSpeed={120}
+          deleteSpeed={80}
+        />
       </div>
       <div className="overflow-x-auto">
         <table className="table">
