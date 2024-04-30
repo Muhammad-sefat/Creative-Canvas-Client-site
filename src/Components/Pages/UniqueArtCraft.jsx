@@ -79,7 +79,7 @@ const UniqueArtCraft = () => {
           ></Typewriter>
         </span>
       </p>
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-5">
         {uniqueValue.slice(0, 3).map((craft) => (
           <SingleUniqueArtCraft
             key={craft._id}

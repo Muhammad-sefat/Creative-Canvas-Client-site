@@ -1,3 +1,4 @@
+import React from "react";
 import ArtCraftItems from "./ArtCraftItems";
 import Blogs from "./Blogs";
 import CraftItems from "./CraftItems";
