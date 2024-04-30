@@ -9,7 +9,11 @@ const UniqueCraftDetails = () => {
       <section className="p-4 lg:p-8 dark:bg-gray-100 dark:text-gray-800">
         <div className="container mx-auto space-y-12">
           <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-            <div className="flex flex-col text-left justify-center flex-1 p-6 dark:bg-gray-50">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              className="flex flex-col text-left justify-center flex-1 p-6 dark:bg-gray-50"
+            >
               <h3 className="text-3xl font-bold">{name}</h3>
               <h4 className="pt-3 text-xl font-medium">{subcategory}</h4>
               <p className="my-4 dark:text-gray-600 font-medium">
@@ -36,6 +40,8 @@ const UniqueCraftDetails = () => {
               <p className="  text-lg font-semibold">Customization : Yes</p>
             </div>
             <img
+              data-aos="fade-left"
+              data-aos-duration="1000"
               src={photo}
               alt=""
               className="h-80 dark:bg-gray-500 aspect-video"

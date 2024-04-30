@@ -36,7 +36,11 @@ const Register = () => {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100"
+          >
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <p className="text-4xl font-bold text-orange-500 pb-3">
@@ -117,7 +121,11 @@ const Register = () => {
               </NavLink>
             </p>
           </div>
-          <div className="text-center lg:text-left">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="text-center lg:text-left"
+          >
             <p className="text-2xl md:text-4xl font-bold py-3">
               Importants Of Craft
             </p>

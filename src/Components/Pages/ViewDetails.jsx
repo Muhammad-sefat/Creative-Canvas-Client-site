@@ -17,8 +17,17 @@ const ViewDetails = () => {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse gap-5">
-          <img src={photo} className="max-w-lg rounded-lg shadow-2xl" />
-          <div className="text-left">
+          <img
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            src={photo}
+            className="max-w-lg rounded-lg shadow-2xl"
+          />
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="text-left"
+          >
             <h1 className="text-4xl font-bold pb-2">{craft}</h1>
             <h2 className="text-2xl font-semibold">{subcategory}</h2>
             <p className="py-2 font-semibold">{description}</p>

@@ -59,7 +59,7 @@ const AddCraftItems = () => {
       });
   };
   return (
-    <div>
+    <div data-aos="zoom-in" data-aos-duration="1000">
       <form
         onSubmit={handleCraftForm}
         className="border border-amber-900 rounded-md  md:w-[90%] mx-auto my-5 p-8 bg-orange-300"

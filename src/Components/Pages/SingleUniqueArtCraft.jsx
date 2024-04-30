@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const SingleUniqueArtCraft = ({ crafts }) => {
   const { name, photo, subcategory, description, price, rating, _id } = crafts;
   return (
-    <div>
+    <div data-aos="zoom-in" data-aos-duration="1000">
       <div className="card  bg-base-100 shadow-xl my-5">
         <figure>
           <img src={photo} alt="Image" />

@@ -39,7 +39,7 @@ const MyCraft = ({ crafts, displayCustomize, setDisplayCustomize }) => {
   };
 
   return (
-    <div>
+    <div data-aos="zoom-in" data-aos-duration="1000">
       <div className="card bg-base-100 shadow-xl">
         <figure>
           <img src={photo} alt="image" />

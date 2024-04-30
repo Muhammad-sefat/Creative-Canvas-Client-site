@@ -14,7 +14,7 @@ const Blogs = () => {
               <span className="text-orange-500">
                 <Typewriter
                   words={["Creativity of Artisanal Creations"]}
-                  loop
+                  loop={1}
                   typeSpeed={80}
                   deleteSpeed={100}
                 />

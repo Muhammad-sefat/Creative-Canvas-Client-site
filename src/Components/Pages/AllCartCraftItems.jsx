@@ -8,7 +8,7 @@ const AllCartCraftItems = () => {
       <div className="text-3xl bg-orange-500 text-center p-5 my-5 font-bold text-white">
         <Typewriter
           words={["Our All Arts And Crafts Here"]}
-          loop
+          loop={1}
           typeSpeed={120}
           deleteSpeed={80}
         />

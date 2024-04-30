@@ -4,7 +4,11 @@ const SingleCraftItem = ({ crafts }) => {
   const { craft, photo, subcategory, description, price, rating, _id } = crafts;
   return (
     <div>
-      <div className="card  bg-base-100 shadow-xl my-5">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        className="card  bg-base-100 shadow-xl my-5"
+      >
         <figure>
           <img src={photo} alt="Image" />
         </figure>

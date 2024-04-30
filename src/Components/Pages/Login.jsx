@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
-import lottie from "../../assets/lottie.json";
+import lottie from "../../assets/Lottie.json";
 
 const Login = () => {
   const { signinUser, signInWithGoogle, signInWithGithub } =
@@ -55,7 +55,11 @@ const Login = () => {
   return (
     <div className="hero min-h-screen bg-base-200 py-5">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          className="text-center lg:text-left"
+        >
           <p className="text-2xl md:text-4xl font-bold py-3">
             Importants Of Art
           </p>
@@ -69,7 +73,11 @@ const Login = () => {
           </p>
           <Lottie animationData={lottie} loop={true}></Lottie>
         </div>
-        <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100"
+        >
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             <p className="text-4xl font-bold text-orange-500 pb-3">
               Login Now!

@@ -1,7 +1,11 @@
 const Faq = () => {
   return (
     <div className="flex flex-col md:flex-row items-center border border-orange-500 rounded-md p-5 my-5">
-      <div className="space-y-4 md:w-[50%]">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        className="space-y-4 md:w-[50%]"
+      >
         <p className="text-3xl font-bold text-orange-500">
           Frequently Asked Question
         </p>
@@ -88,7 +92,7 @@ const Faq = () => {
           </div>
         </div>
       </div>
-      <div className="md:w-[50%]">
+      <div data-aos="fade-left" data-aos-duration="1000" className="md:w-[50%]">
         <section className="p-6 dark:text-gray-800">
           <form
             noValidate=""

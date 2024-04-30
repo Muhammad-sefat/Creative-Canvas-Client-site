@@ -54,7 +54,7 @@ const MyArtCraftList = () => {
       <h2 className="text-3xl font-bold py-3 bg-orange-500 p-3 text-white rounded-md">
         <Typewriter
           words={["My Arts and Crafts"]}
-          loop
+          loop={1}
           typeSpeed={120}
           deleteSpeed={80}
         />

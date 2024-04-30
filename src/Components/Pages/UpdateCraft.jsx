@@ -60,7 +60,7 @@ const UpdateCraft = () => {
       });
   };
   return (
-    <div>
+    <div data-aos="zoom-in" data-aos-duration="1000">
       <form
         onSubmit={handleUpadeteCraft}
         className="border border-orange-700 rounded-md  md:w-[90%] mx-auto my-5 p-8 "
