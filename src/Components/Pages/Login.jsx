@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import registerImg from "../../assets/input.jpg";
+import Lottie from "lottie-react";
+import lottie from "../../assets/lottie.json";
 
 const Login = () => {
   const { signinUser, signInWithGoogle, signInWithGithub } =
@@ -66,7 +67,7 @@ const Login = () => {
             individuals to communicate and connect with others on a profound
             level.
           </p>
-          <img className="rounded-md" src={registerImg} alt="image" />
+          <Lottie animationData={lottie} loop={true}></Lottie>
         </div>
         <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
