@@ -5,7 +5,7 @@ const CraftItems = () => {
   const allCrafts = useLoaderData();
   return (
     <div>
-      <h2 className="text-3xl font-bold pt-8 text-orange-500">Our Crafts</h2>
+      <h2 className="text-4xl font-bold pt-8 text-orange-500">Our Crafts</h2>
       <p className="p-5 md:w-[80%] mx-auto font-semibold pt-3">
         Drawing, on the other hand, relies on lines, shapes, and shading to
         represent objects, scenes, or figures. From realistic portraits to

@@ -24,12 +24,14 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/crafts"),
+        loader: () =>
+          fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/crafts"),
       },
       {
         path: "/allArt&Carft",
         element: <AllCartCraftItems></AllCartCraftItems>,
-        loader: () => fetch("http://localhost:5000/crafts"),
+        loader: () =>
+          fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/crafts"),
       },
       {
         path: "/viewdetails/:id",
@@ -39,7 +41,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/crafts/${params.id}`),
+          fetch(
+            `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${params.id}`
+          ),
       },
       {
         path: "/AddCraftItem",
@@ -59,9 +63,15 @@ const Router = createBrowserRouter([
       },
       {
         path: "/updateCraft/:id",
-        element: <UpdateCraft></UpdateCraft>,
+        element: (
+          <PrivateRoute>
+            <UpdateCraft></UpdateCraft>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/crafts/${params.id}`),
+          fetch(
+            `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${params.id}`
+          ),
       },
       {
         path: "/",
@@ -71,19 +81,25 @@ const Router = createBrowserRouter([
         path: "/viewCraft/:id",
         element: <ViewCraft></ViewCraft>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/crafts/${params.id}`),
+          fetch(
+            `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${params.id}`
+          ),
       },
       {
         path: "/uniqueArtCraft/:id",
         element: <UniqueArtCraft></UniqueArtCraft>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/subcraft/${params.id}`),
+          fetch(
+            `https://b9a10-server-side-muhammad-sefat.vercel.app/subcraft/${params.id}`
+          ),
       },
       {
         path: "/uniqueCraftDetails/:id",
         element: <UniqueCraftDetails></UniqueCraftDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/subcraft/${params.id}`),
+          fetch(
+            `https://b9a10-server-side-muhammad-sefat.vercel.app/subcraft/${params.id}`
+          ),
       },
       {
         path: "/login",

@@ -9,11 +9,12 @@ const MyArtCraftList = () => {
   const [displayCustomize, setDisplayCustomize] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myCrafts/${user?.email}`)
+    fetch(
+      `https://b9a10-server-side-muhammad-sefat.vercel.app/myCrafts/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCrafts(data);
-        console.log(data);
       });
   }, [user]);
 
@@ -35,7 +36,6 @@ const MyArtCraftList = () => {
     });
     return (newValue = ["All", ...new Set(newValue)]);
   };
-
   const filterOnlyData = UniqueData(crafts, "customization");
 
   useEffect(() => {
@@ -43,11 +43,10 @@ const MyArtCraftList = () => {
       const uniqueValue = crafts.filter((currentElm) => {
         return filterOnlyData.includes(currentElm.customization);
       });
-
       setCustomize(uniqueValue);
       setDisplayCustomize(uniqueValue);
     }
-  }, []);
+  }, [crafts]);
 
   return (
     <div>
@@ -92,7 +91,7 @@ const MyArtCraftList = () => {
         {displayCustomize.map((craft) => (
           <MyCraft
             key={craft._id}
-            craftss={craft}
+            crafts={craft}
             displayCustomize={displayCustomize}
             setDisplayCustomize={setDisplayCustomize}
           ></MyCraft>

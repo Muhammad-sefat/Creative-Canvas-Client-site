@@ -25,7 +25,7 @@ const Navbar = () => {
   };
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 z-20 relative">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -90,12 +90,12 @@ const Navbar = () => {
               </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl font-bold gap-0">
+          <a className="text-xl md:text-3xl font-bold gap-0">
             Creative <span className="text-orange-600 ">Canvas</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-base font-medium space-x-2">
+          <ul className="menu menu-horizontal text-base font-medium space-x-2">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -138,7 +138,7 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <div className="navbar-end space-x-3">
+        <div className="navbar-end md:space-x-3">
           <label className="cursor-pointer grid place-items-center">
             <input
               onChange={handleToggle}
@@ -180,7 +180,7 @@ const Navbar = () => {
             <div className="avatar flex items-center gap-2">
               <div className="w-9 md:w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2 group hover:bg-gray-300">
                 <img
-                  className="rounded-full w-36 mx-auto"
+                  className="rounded-full mx-auto"
                   src={
                     user?.photoURL || "https://i.ibb.co/ZWsGc68/profile-06.png"
                   }
@@ -191,14 +191,14 @@ const Navbar = () => {
                   </li>
                 </ul>
               </div>
-              <a onClick={logOutBtn} className="btn font-semibold">
+              <a onClick={logOutBtn} className="btn mb-2 font-semibold">
                 Logout
               </a>
             </div>
           ) : (
-            <div className="space-x-2">
+            <div className="space-x-2 space-y-2">
               <Link to={"/login"}>
-                <button className="btn text-base">Login</button>
+                <button className="btn mb-2 text-base">Login</button>
               </Link>
               <Link to={"/register"}>
                 <button className="btn text-base">Register</button>

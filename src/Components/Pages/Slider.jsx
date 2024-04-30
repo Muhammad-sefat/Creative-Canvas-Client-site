@@ -12,7 +12,7 @@ import { Navigation, Pagination } from "swiper/modules";
 
 const Slider = () => {
   return (
-    <div>
+    <div className="z-0 relative">
       <Swiper
         navigation={true}
         pagination={true}

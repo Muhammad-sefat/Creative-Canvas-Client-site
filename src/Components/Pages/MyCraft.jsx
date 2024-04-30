@@ -15,9 +15,12 @@ const MyCraft = ({ crafts, displayCustomize, setDisplayCustomize }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/crafts/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -39,7 +42,7 @@ const MyCraft = ({ crafts, displayCustomize, setDisplayCustomize }) => {
     <div>
       <div className="card bg-base-100 shadow-xl">
         <figure>
-          <img className="h-[90vh]" src={photo} alt="image" />
+          <img src={photo} alt="image" />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-xl">{craft}</h2>

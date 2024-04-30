@@ -34,7 +34,7 @@ const AddCraftItems = () => {
 
     // send data
 
-    fetch("http://localhost:5000/crafts", {
+    fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/crafts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

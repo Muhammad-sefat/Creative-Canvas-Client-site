@@ -3,7 +3,18 @@ import Swal from "sweetalert2";
 
 const UpdateCraft = () => {
   const singleCraft = useLoaderData();
-  const { _id } = singleCraft;
+  const {
+    _id,
+    craft,
+    subcategory,
+    stock,
+    description,
+    price,
+    rating,
+    customization,
+    process,
+    photo,
+  } = singleCraft;
   const handleUpadeteCraft = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -28,7 +39,7 @@ const UpdateCraft = () => {
       photo,
     };
 
-    fetch(`http://localhost:5000/crafts/${_id}`, {
+    fetch(`https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -55,7 +66,7 @@ const UpdateCraft = () => {
         className="border border-orange-700 rounded-md  md:w-[90%] mx-auto my-5 p-8 "
       >
         <h1 className="text-center text-3xl text-orange-600 font-bold py-5">
-          Update Craft
+          Update Your Craft
         </h1>
 
         <div className="flex flex-col md:flex-row  md:gap-8 text-left">
@@ -67,6 +78,7 @@ const UpdateCraft = () => {
               type="text"
               name="craft"
               placeholder="Enter craft name"
+              defaultValue={craft}
             />
             <label className="font-semibold">Stock Status</label>
             <br />
@@ -75,6 +87,7 @@ const UpdateCraft = () => {
               type="text"
               name="stock"
               placeholder="Stock status"
+              defaultValue={stock}
             />
             <br />
             <label className="font-semibold ">Price</label>
@@ -84,6 +97,7 @@ const UpdateCraft = () => {
               type="text"
               name="price"
               placeholder="Enter Price"
+              defaultValue={price}
             />
             <br />
             <label className="font-semibold ">Customization</label>
@@ -93,6 +107,7 @@ const UpdateCraft = () => {
               type="text"
               name="customization"
               placeholder="customization"
+              defaultValue={customization}
             />
           </div>
           <div className="md:w-[50%]">
@@ -103,6 +118,7 @@ const UpdateCraft = () => {
               type="text"
               name="subcategory"
               placeholder="Enter subcategory name"
+              defaultValue={subcategory}
             />
 
             <br />
@@ -113,6 +129,7 @@ const UpdateCraft = () => {
               type="text"
               name="photo"
               placeholder="Enter photo URL"
+              defaultValue={photo}
             />
             <br />
             <label className="font-semibold ">Rating</label>
@@ -122,6 +139,7 @@ const UpdateCraft = () => {
               type="text"
               name="rating"
               placeholder="Enter rating"
+              defaultValue={rating}
             />
             <br />
             <label className="font-semibold ">Processing Time</label>
@@ -131,6 +149,7 @@ const UpdateCraft = () => {
               type="text"
               name="process"
               placeholder="Processing time"
+              defaultValue={process}
             />
           </div>
         </div>
@@ -142,6 +161,7 @@ const UpdateCraft = () => {
             type="text"
             name="description"
             placeholder="Enter short description"
+            defaultValue={description}
           />
         </div>
         <input
