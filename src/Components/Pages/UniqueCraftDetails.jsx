@@ -1,36 +1,14 @@
-import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import SingleUniqueArtCraft from "./SingleUniqueArtCraft";
 
-const UniqueArtCraft = () => {
-  const uniqueCraft = useLoaderData();
+const UniqueCraftDetails = () => {
+  const UniqueCrafts = useLoaderData();
   const { photo, name, subcategory, description, price, rating, process } =
-    uniqueCraft;
-
-  const [artCrafts, setArtCraft] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/subcraft")
-      .then((res) => res.json())
-      .then((data) => {
-        setArtCraft(data);
-      });
-  }, []);
-
-  const uniqueValue = artCrafts.filter(
-    (artcraft) => uniqueCraft.subcategory === artcraft.subcategory
-  );
-
+    UniqueCrafts;
   return (
     <div>
       <section className="p-4 lg:p-8 dark:bg-gray-100 dark:text-gray-800">
         <div className="container mx-auto space-y-12">
           <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-            <img
-              src={photo}
-              alt=""
-              className="h-80 dark:bg-gray-500 aspect-video"
-            />
             <div className="flex flex-col text-left justify-center flex-1 p-6 dark:bg-gray-50">
               <h3 className="text-3xl font-bold">{name}</h3>
               <h4 className="pt-3 text-xl font-medium">{subcategory}</h4>
@@ -47,7 +25,7 @@ const UniqueArtCraft = () => {
                 </p>
               </div>
               <hr />
-              <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="flex justify-between items-center">
                 <p className=" py-2 text-lg font-semibold">
                   Process_Time : {process}
                 </p>
@@ -57,22 +35,16 @@ const UniqueArtCraft = () => {
               </div>
               <p className="  text-lg font-semibold">Customization : Yes</p>
             </div>
+            <img
+              src={photo}
+              alt=""
+              className="h-80 dark:bg-gray-500 aspect-video"
+            />
           </div>
         </div>
       </section>
-      <p className="text-2xl md:text-4xl font-bold py-5 text-center text-orange-500">
-        Releted Art and Craft
-      </p>
-      <div className="grid md:grid-cols-3 gap-5">
-        {uniqueValue.slice(0, 3).map((craft) => (
-          <SingleUniqueArtCraft
-            key={craft._id}
-            crafts={craft}
-          ></SingleUniqueArtCraft>
-        ))}
-      </div>
     </div>
   );
 };
 
-export default UniqueArtCraft;
+export default UniqueCraftDetails;

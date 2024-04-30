@@ -13,6 +13,7 @@ import CraftItems from "./Pages/CraftItems";
 import UpdateCraft from "./Pages/UpdateCraft";
 import ViewCraft from "./Pages/ViewCraft";
 import UniqueArtCraft from "./Pages/UniqueArtCraft";
+import UniqueCraftDetails from "./Pages/UniqueCraftDetails";
 
 const Router = createBrowserRouter([
   {
@@ -75,6 +76,12 @@ const Router = createBrowserRouter([
       {
         path: "/uniqueArtCraft/:id",
         element: <UniqueArtCraft></UniqueArtCraft>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/subcraft/${params.id}`),
+      },
+      {
+        path: "/uniqueCraftDetails/:id",
+        element: <UniqueCraftDetails></UniqueCraftDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/subcraft/${params.id}`),
       },
