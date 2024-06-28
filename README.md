@@ -1,8 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Creative Canvas
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+## Features
+
+- Use Firebase Authentication by Email/Password,Google,Github.
+- Use MongoDB for CURD Operation"
+- Filtaring Data by Email and Category.
+- Responsive For All Device and Use Light and Dark Mood.
+- Use React Dom,Private Route,Active Link.
+- Use Slider and Aos Animation.
+
+### Two Package Used
+- Lottie React
+- React simple typewriter
+- React Swiper
+- React AOS
+
+
+
+
+
+## 🔗 Links
+Live Link : https://creative-canvas-24236.web.app/
+
