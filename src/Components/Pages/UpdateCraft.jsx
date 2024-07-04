@@ -39,7 +39,7 @@ const UpdateCraft = () => {
       photo,
     };
 
-    fetch(`https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${_id}`, {
+    fetch(`https://creative-canvas-server-site.vercel.app/crafts/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

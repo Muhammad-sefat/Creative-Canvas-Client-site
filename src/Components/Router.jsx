@@ -25,13 +25,13 @@ const Router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () =>
-          fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/crafts"),
+          fetch("https://creative-canvas-server-site.vercel.app/crafts"),
       },
       {
         path: "/allArt&Carft",
         element: <AllCartCraftItems></AllCartCraftItems>,
         loader: () =>
-          fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/crafts"),
+          fetch("https://creative-canvas-server-site.vercel.app/crafts"),
       },
       {
         path: "/viewdetails/:id",
@@ -42,7 +42,7 @@ const Router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${params.id}`
+            `https://creative-canvas-server-site.vercel.app/crafts/${params.id}`
           ),
       },
       {
@@ -70,7 +70,7 @@ const Router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${params.id}`
+            `https://creative-canvas-server-site.vercel.app/crafts/${params.id}`
           ),
       },
       {
@@ -82,7 +82,7 @@ const Router = createBrowserRouter([
         element: <ViewCraft></ViewCraft>,
         loader: ({ params }) =>
           fetch(
-            `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${params.id}`
+            `https://creative-canvas-server-site.vercel.app/crafts/${params.id}`
           ),
       },
       {
@@ -90,7 +90,7 @@ const Router = createBrowserRouter([
         element: <UniqueArtCraft></UniqueArtCraft>,
         loader: ({ params }) =>
           fetch(
-            `https://b9a10-server-side-muhammad-sefat.vercel.app/subcraft/${params.id}`
+            `https://creative-canvas-server-site.vercel.app/subcraft/${params.id}`
           ),
       },
       {
@@ -98,7 +98,7 @@ const Router = createBrowserRouter([
         element: <UniqueCraftDetails></UniqueCraftDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://b9a10-server-side-muhammad-sefat.vercel.app/subcraft/${params.id}`
+            `https://creative-canvas-server-site.vercel.app/subcraft/${params.id}`
           ),
       },
       {

@@ -12,7 +12,7 @@ const UniqueArtCraft = () => {
   const [artCrafts, setArtCraft] = useState([]);
 
   useEffect(() => {
-    fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/subcraft")
+    fetch("https://creative-canvas-server-site.vercel.app/subcraft")
       .then((res) => res.json())
       .then((data) => {
         setArtCraft(data);

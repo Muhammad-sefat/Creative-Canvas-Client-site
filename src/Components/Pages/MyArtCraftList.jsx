@@ -11,7 +11,7 @@ const MyArtCraftList = () => {
 
   useEffect(() => {
     fetch(
-      `https://b9a10-server-side-muhammad-sefat.vercel.app/myCrafts/${user?.email}`
+      `https://creative-canvas-server-site.vercel.app/myCrafts/${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {

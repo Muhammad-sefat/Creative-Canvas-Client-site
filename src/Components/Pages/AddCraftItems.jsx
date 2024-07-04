@@ -34,7 +34,7 @@ const AddCraftItems = () => {
 
     // send data
 
-    fetch("https://b9a10-server-side-muhammad-sefat.vercel.app/crafts", {
+    fetch("https://creative-canvas-server-site.vercel.app/crafts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -15,12 +15,9 @@ const MyCraft = ({ crafts, displayCustomize, setDisplayCustomize }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://b9a10-server-side-muhammad-sefat.vercel.app/crafts/${id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`https://creative-canvas-server-site.vercel.app/crafts/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
